@@ -43,6 +43,16 @@ pip install -e .
 
 ## Quick Start
 
+### Option 1: Run Phase 2 Benchmark on Google Colab (Recommended)
+
+**No GPU needed locally!** Run benchmarks on Google Colab for free:
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kelsierlol/sentinel/blob/main/colab/Phase2_ImageNetC_Benchmark.ipynb)
+
+See [`colab/README.md`](./colab/README.md) for details.
+
+### Option 2: Local CLI Usage
+
 ```bash
 # Check images for corruption
 sentinel check ./my_images/ --threshold 0.05
@@ -141,14 +151,18 @@ We validate against 4 production-grade metrics:
 
 ## Development Status
 
-🚧 **Phase 1 (Current)**: Core architecture implemented
+✅ **Phase 1 COMPLETE**: Core architecture validated
 - ✅ SpatialAlphaController with 3x3 convs
 - ✅ UNet reconstruction model
 - ✅ QualityGate engine
 - ✅ CLI skeleton
-- ⏳ Testing on CIFAR-10
+- ✅ **CIFAR-10 validation: PR-AUC 0.8135** (16% above target!)
 
-📋 **Phase 2**: ImageNet-C benchmarking
+🚧 **Phase 2 (Current)**: ImageNet-C benchmarking
+- ✅ Colab notebook ready
+- ⏳ Run on 15 corruption types
+- ⏳ Compare vs OpenCV baselines
+
 📋 **Phase 3**: Full CLI implementation
 📋 **Phase 4**: Production hardening
 📋 **Phase 5**: Validation & pilot deployment
